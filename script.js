@@ -12,13 +12,13 @@ function playSound(e){
 };
 
 function removeTransition(e){
+console.log('this string');
   if(e.propertyName !== 'transform') return;
-  // console.log(e.propertyName);
   this.classList.remove('playing')
 };
 
 const keys = document.querySelectorAll('.key');
-// console.log('keys', keys);
+console.log('keys', keys);
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 window.addEventListener('keydown', playSound);
